@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Avengers: The Final Mission – Sports Day Grammar Challenge</title>
+<style>
+:root{--navy:#050914;--navy2:#0b1426;--panel:rgba(11,20,38,.88);--red:#e62429;--gold:#f5b82e;--white:#f4f7fb;--mute:#9fb0c8;--ok:#3ddc84;--bad:#ff5a5f;
+--head:Impact,'Arial Narrow Bold','Haettenschweiler',sans-serif;--body:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif}
+*{box-sizing:border-box;margin:0}
+html,body{min-height:100%}
+body{background:var(--navy);color:var(--white);font:18px/1.5 var(--body);overflow-x:hidden}
+.bg{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse at 20% 0%,rgba(230,36,41,.22),transparent 55%),radial-gradient(ellipse at 90% 100%,rgba(245,184,46,.14),transparent 50%),linear-gradient(180deg,#050914,#0a1224)}
+.grid{position:fixed;inset:0;z-index:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse at 50% 40%,#000 25%,transparent 75%);animation:drift 24s linear infinite}
+@keyframes drift{to{background-position:44px 44px}}
+.top{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 20px;border-bottom:1px solid rgba(255,255,255,.12);background:rgba(5,9,20,.8);backdrop-filter:blur(8px)}
+.brand{display:flex;align-items:center;gap:10px;font:700 13px var(--body);letter-spacing:.18em;color:var(--gold)}
+.brand svg{width:34px;height:34px}
+.chip{font-weight:700;font-size:14px;color:var(--white);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:4px 12px;min-height:30px}
+main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:22px 16px 48px}
+.screen{display:none}.screen.active{display:block;animation:in .5s ease both}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+.card{background:var(--panel);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:22px;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--red),var(--gold),transparent)}
+h1,h2,h3{font-family:var(--head);font-weight:400;letter-spacing:.05em;text-transform:uppercase}
+.kicker{font:700 13px var(--body);letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
+.logo{width:120px;height:120px;margin:0 auto 6px;display:block}
+.logo .ring{transform-origin:60px 60px;animation:spin 14s linear infinite}
+.logo .glow{animation:pulse 2.4s ease-in-out infinite alternate}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{from{opacity:.5}to{opacity:1}}
+.hero{text-align:center;max-width:640px;margin:10px auto 0}
+.hero h1{font-size:clamp(2.2rem,6vw,3.6rem);line-height:1;text-shadow:0 0 28px rgba(230,36,41,.6);margin:6px 0}
+.hero h1 b{color:var(--red);font-weight:400}
+.sub{font:700 clamp(.9rem,2.4vw,1.15rem) var(--body);letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+label{display:block;font:700 13px var(--body);letter-spacing:.14em;color:var(--gold);text-align:left;margin-bottom:6px}
+input[type=text]{width:100%;background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.25);border-radius:10px;color:var(--white);font:700 20px var(--body);padding:12px 14px;outline:0;transition:.2s}
+input[type=text]:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,184,46,.25)}
+.err{color:var(--bad);font-weight:700;min-height:26px;font-size:16px;text-align:left;margin-top:6px}
+.btn{display:inline-block;border:0;cursor:pointer;color:#fff;font:400 24px var(--head);letter-spacing:.1em;text-transform:uppercase;padding:12px 30px;border-radius:8px;background:linear-gradient(180deg,#ff4046,#c8161c 60%,#8d0d12);box-shadow:0 6px 18px rgba(230,36,41,.35),inset 0 0 0 2px rgba(245,184,46,.7);transition:transform .15s,filter .15s}
+.btn:hover:not(:disabled){transform:translateY(-2px);filter:brightness(1.1)}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.btn.ghost{background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 2px rgba(255,255,255,.3)}
+.btn:focus-visible,.opt:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.brief{background:rgba(255,255,255,.05);border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:14px 18px;font-size:19px;text-align:left;margin:18px 0}
+.board h3{font-size:1.5rem;color:var(--gold);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.board h3 span{font:700 11px var(--body);letter-spacing:.18em;color:var(--red);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.35}}
+table{width:100%;border-collapse:collapse;font-size:17px}
+th{font:700 12px var(--body);letter-spacing:.14em;color:var(--mute);text-transform:uppercase;text-align:left;padding:6px 8px;border-bottom:2px solid rgba(245,184,46,.5)}
+td{padding:10px 8px;border-bottom:1px solid rgba(255,255,255,.1)}
+td:first-child{font-weight:800}td+td{color:var(--gold);font-weight:800;font-variant-numeric:tabular-nums}
+.note{margin-top:12px;background:rgba(245,184,46,.12);border:1px dashed var(--gold);border-radius:10px;padding:10px 12px;font-weight:700;font-size:16px}
+.layout{display:grid;grid-template-columns:340px 1fr;gap:18px;align-items:start}
+.side{position:sticky;top:12px}
+.prog{display:flex;justify-content:space-between;align-items:center;font:400 22px var(--head);letter-spacing:.1em;color:var(--gold)}
+.bar{height:10px;border-radius:5px;background:rgba(255,255,255,.12);overflow:hidden;margin:8px 0 14px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--gold));transition:width .5s}
+.tag{display:inline-block;font:700 12px var(--body);letter-spacing:.14em;text-transform:uppercase;background:rgba(230,36,41,.2);border:1px solid var(--red);color:#ffb3b5;border-radius:20px;padding:3px 12px}
+.q{font-size:clamp(1.15rem,2.6vw,1.45rem);font-weight:800;margin:12px 0 4px}
+.qsub{color:var(--mute);margin-bottom:12px}
+.opt{display:flex;gap:14px;align-items:center;width:100%;text-align:left;cursor:pointer;margin:9px 0;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.2);color:var(--white);font:700 18px var(--body);transition:.18s}
+.opt:hover:not(:disabled){background:rgba(255,255,255,.14);border-color:var(--gold);transform:translateX(4px)}
+.opt b{flex:none;width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:rgba(245,184,46,.18);color:var(--gold);font:400 22px var(--head)}
+.opt:disabled{cursor:default}
+.opt.right{background:rgba(61,220,132,.18);border-color:var(--ok);animation:pop .4s}.opt.right b{background:var(--ok);color:#04140a}
+.opt.wrong{background:rgba(255,90,95,.16);border-color:var(--bad);animation:shk .4s}.opt.wrong b{background:var(--bad);color:#2a0507}
+.opt.dim{opacity:.5}
+@keyframes pop{50%{transform:scale(1.03)}}@keyframes shk{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.fb{margin-top:14px;border-radius:12px;padding:14px 16px;font-size:17px;animation:in .4s both}
+.fb.ok{background:rgba(61,220,132,.12);border:1px solid var(--ok)}.fb.no{background:rgba(255,90,95,.1);border:1px solid var(--bad)}
+.fb strong{display:block;font:400 22px var(--head);letter-spacing:.08em;margin-bottom:4px}.fb.ok strong{color:var(--ok)}.fb.no strong{color:var(--bad)}
+.next{margin-top:16px;text-align:right}
+.score{font:400 clamp(4rem,14vw,7rem) var(--head);line-height:1;color:var(--gold);text-shadow:0 0 36px rgba(245,184,46,.5)}
+.score small{font-size:.4em;color:var(--white)}
+.msg{font-size:clamp(1.1rem,2.6vw,1.4rem);font-weight:800;margin:8px auto 16px;max-width:560px}
+.review{max-width:620px;margin:0 auto 16px;text-align:left}
+.rv{display:flex;gap:10px;align-items:center;padding:8px 12px;margin:6px 0;border-radius:10px;background:rgba(255,255,255,.06);font-weight:700;font-size:16px}
+.rv i{font-style:normal;font-weight:900;width:26px;height:26px;display:grid;place-items:center;border-radius:50%;flex:none}
+.rv.ok i{background:var(--ok);color:#04140a}.rv.no i{background:var(--bad);color:#2a0507}
+.row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+.status{max-width:620px;margin:14px auto 0;border-radius:12px;padding:12px 16px;font-weight:700;font-size:16px;text-align:left;animation:in .4s both}
+.status.ok{background:rgba(61,220,132,.14);border:1px solid var(--ok)}
+.status.warn{background:rgba(245,184,46,.14);border:1px solid var(--gold)}
+.status.bad{background:rgba(255,90,95,.12);border:1px solid var(--bad)}
+.status strong{display:block;font:400 22px var(--head);letter-spacing:.08em}
+.status.ok strong{color:var(--ok)}.status.warn strong{color:var(--gold)}.status.bad strong{color:var(--bad)}
+.status small{display:block;font-weight:600;color:var(--mute);margin-top:4px}
+.cf{position:fixed;top:-20px;width:9px;height:15px;z-index:9;pointer-events:none;animation:fall 2.6s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.side{position:static}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="bg"></div><div class="grid"></div>
+
+<header class="top">
+  <div class="brand">
+    <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="#f5b82e" stroke-width="6"/><path d="M60 24L86 92H72L67 78H53L48 92H34ZM60 48L55 66H65Z" fill="#f4f7fb" fill-rule="evenodd"/></svg>
+    AVENGERS INITIATIVE · ASSESSMENT
+  </div>
+  <div class="chip" id="pupilChip" hidden></div>
+</header>
+
+<main>
+<!-- 1. OPENING -->
+<section class="screen active" id="s-start">
+  <div class="card hero">
+    <svg class="logo" viewBox="0 0 120 120" aria-hidden="true">
+      <circle class="glow" cx="60" cy="60" r="56" fill="rgba(230,36,41,.12)"/>
+      <g class="ring"><circle cx="60" cy="60" r="52" fill="none" stroke="#f5b82e" stroke-width="4" stroke-dasharray="14 8"/></g>
+      <circle cx="60" cy="60" r="44" fill="none" stroke="#e62429" stroke-width="3"/>
+      <path d="M60 28L84 90H71L66 77H54L49 90H36ZM60 50L56 65H64Z" fill="#f4f7fb" fill-rule="evenodd"/>
+    </svg>
+    <p class="kicker">Avengers Initiative · Year 4 English</p>
+    <h1>Avengers: <b>The Final Mission</b></h1>
+    <p class="sub">Sports Day Grammar Challenge</p>
+    <label for="pupilId">YOUR NICKNAME OR PUPIL ID</label>
+    <input type="text" id="pupilId" maxlength="20" autocomplete="off" placeholder="Type here…" aria-describedby="idErr">
+    <p class="err" id="idErr" role="alert"></p>
+    <button class="btn" id="btnStart">Enter Mission</button>
+  </div>
+</section>
+
+<!-- 2. BRIEFING + SCOREBOARD -->
+<section class="screen" id="s-brief">
+  <div class="card">
+    <p class="kicker">Mission briefing</p>
+    <h2 style="font-size:2rem;margin-top:4px">Sports Day at Avengers HQ</h2>
+    <div class="brief">The Avengers are preparing for their annual Sports Day. Three superheroes are competing in different sports events. As a trainee, your mission is to analyse their performances and complete three grammar challenges using comparative and superlative adjectives.</div>
+    <div class="board" id="boardBrief"></div>
+    <div class="row"><button class="btn" id="btnBegin">Begin Challenge 1</button></div>
+  </div>
+</section>
+
+<!-- 3. QUESTIONS -->
+<section class="screen" id="s-q">
+  <div class="layout">
+    <aside class="card side board" id="boardSide" aria-label="Sports Day scoreboard"></aside>
+    <div class="card">
+      <div class="prog"><span id="progText">Challenge 1 / 3</span><span id="progScore" style="font-size:16px;font-family:var(--body);font-weight:800;color:var(--mute)"></span></div>
+      <div class="bar"><i id="progBar"></i></div>
+      <span class="tag" id="qTag"></span>
+      <p class="q" id="qText"></p>
+      <p class="qsub" id="qSub">Choose one answer.</p>
+      <div id="opts" role="group" aria-label="Answer options"></div>
+      <div id="fb" aria-live="polite"></div>
+      <div class="next"><button class="btn" id="btnNext" hidden>Next Challenge</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. RESULTS -->
+<section class="screen" id="s-result">
+  <div class="card" style="text-align:center">
+    <p class="kicker" id="resKick">Mission complete</p>
+    <h2 style="font-size:2rem;margin-top:4px" id="resTitle"></h2>
+    <div class="score" id="resScore"></div>
+    <p class="msg" id="resMsg"></p>
+    <div class="review" id="resReview"></div>
+    <div class="row">
+      <button class="btn" id="btnSubmit">Submit Results</button>
+      <button class="btn ghost" id="btnRetry">Retry Mission</button>
+      <button class="btn ghost" id="btnHome">Return to Training</button>
+    </div>
+    <div id="status" aria-live="polite"></div>
+  </div>
+</section>
+</main>
+
+<script>
+/* ============================================================
+   TEACHER SETUP: paste your deployed Google Apps Script
+   Web App URL between the quotes below (it ends with /exec).
+   ============================================================ */
+var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzeptcHkVn8UY2a8KGZNpu9myjTanL-ee19Fp4Ul_G1BI9jpftL_jBZ7AktVH66FBh6/exec";
+
+(function(){
+"use strict";
+var $=function(id){return document.getElementById(id)};
+
+var HEROES=[
+  {n:"Iron Man",run:"15 seconds",jump:"120 cm"},
+  {n:"Spider-Man",run:"12 seconds",jump:"150 cm"},
+  {n:"Captain America",run:"14 seconds",jump:"130 cm"}
+];
+var QS=[
+  {tag:"Comparative adjectives",
+   q:"Iron Man wants to know how Spider-Man performed compared to him. Which sentence correctly describes their running performance?",
+   opts:[
+    {t:"Spider-Man is fastest than Iron Man.",w:"“Fastest” is for the best of three or more. With “than”, use “faster”."},
+    {t:"Spider-Man is more fast than Iron Man.",w:"Short adjectives like “fast” take -er. We do not say “more fast”."},
+    {t:"Spider-Man is faster than Iron Man.",w:""},
+    {t:"Spider-Man is the faster than Iron Man.",w:"We do not put “the” before a comparative when we use “than”."}],
+   a:2,
+   why:"Spider-Man ran in 12 seconds and Iron Man ran in 15 seconds. A shorter time means faster. To compare two heroes we add -er to the adjective and then use “than”: faster than."},
+  {tag:"Superlative adjectives",
+   q:"All three Avengers participated in the high jump competition. Who achieved the highest jump?",
+   opts:[
+    {t:"Iron Man",w:"Iron Man jumped 120 cm. That is the lowest jump of the three."},
+    {t:"Spider-Man",w:""},
+    {t:"Captain America",w:"Captain America jumped 130 cm. Spider-Man jumped higher with 150 cm."},
+    {t:"They achieved the same height.",w:"Their heights are different: 120 cm, 150 cm and 130 cm."}],
+   a:1,
+   why:"Spider-Man jumped 150 cm. That is more than 120 cm and 130 cm. When one hero is the best of three, we use the superlative: the highest."},
+  {tag:"Comparative and superlative",
+   q:"Captain America wants to describe the competition results. Choose the correct sentence.",
+   opts:[
+    {t:"Spider-Man jumped higher than Iron Man, and Iron Man jumped the lowest.",w:""},
+    {t:"Spider-Man jumped highest than Iron Man, and Iron Man jumped lower.",w:"Use “higher” with “than” (two heroes). Use “the lowest” for the lowest of three."},
+    {t:"Spider-Man jumped more high than Iron Man, and Iron Man jumped the most low.",w:"“High” becomes “higher” and “low” becomes “the lowest”. We do not use “more” or “most” here."},
+    {t:"Spider-Man jumped the higher than Iron Man, and Iron Man jumped lowest than Captain America.",w:"Do not use “the” with “higher than”, and do not use “lowest” with “than”."}],
+   a:0,
+   why:"Spider-Man (150 cm) jumped higher than Iron Man (120 cm): comparative + than. Iron Man (120 cm) jumped lower than both other heroes, so he jumped the lowest of the three: superlative."}
+];
+var L="ABCD";
+var S={pupil:"",qi:0,ans:[null,null,null],locked:false,score:0,sid:"",sending:false,sent:false};
+
+/* ---------- scoreboard (shared by briefing + question screens) ---------- */
+function boardHTML(){
+  var rows=HEROES.map(function(h){return "<tr><td>"+h.n+"</td><td>"+h.run+"</td><td>"+h.jump+"</td></tr>"}).join("");
+  return "<h3>Sports Day Scoreboard <span>LIVE</span></h3><table><thead><tr><th>Hero</th><th>Running</th><th>High Jump</th></tr></thead><tbody>"+rows+"</tbody></table>"+
+  "<p class=\"note\">Note: A shorter running time means a faster runner.</p>";
+}
+$("boardBrief").innerHTML=boardHTML();$("boardSide").innerHTML=boardHTML();
+
+/* ---------- navigation ---------- */
+function show(id){
+  document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("active")});
+  $(id).classList.add("active");window.scrollTo({top:0,behavior:"smooth"});
+}
+function newSid(){
+  var a="";try{var u=new Uint8Array(12);crypto.getRandomValues(u);a=Array.prototype.map.call(u,function(x){return ("0"+x.toString(16)).slice(-2)}).join("")}
+  catch(e){a=Math.random().toString(16).slice(2)+Math.random().toString(16).slice(2)}
+  return "AV-"+Date.now().toString(36)+"-"+a;
+}
+function startAttempt(){
+  S.qi=0;S.ans=[null,null,null];S.locked=false;S.score=0;S.sid=newSid();S.sending=false;S.sent=false;
+  $("status").innerHTML="";renderQ();show("s-q");
+}
+
+/* ---------- start screen ---------- */
+function begin(){
+  var v=$("pupilId").value.trim();
+  if(!v){$("idErr").textContent="Please type your nickname or pupil ID.";$("pupilId").focus();return}
+  if(!/^[A-Za-z0-9 _.\-]{1,20}$/.test(v)){$("idErr").textContent="Use only letters, numbers, spaces, - or _ please.";$("pupilId").focus();return}
+  $("idErr").textContent="";S.pupil=v;
+  $("pupilChip").hidden=false;$("pupilChip").textContent="Recruit: "+v;
+  show("s-brief");
+}
+$("btnStart").onclick=begin;
+$("pupilId").addEventListener("keydown",function(e){if(e.key==="Enter")begin()});
+$("btnBegin").onclick=startAttempt;
+
+/* ---------- questions ---------- */
+function renderQ(){
+  var q=QS[S.qi];S.locked=false;
+  $("progText").textContent="Challenge "+(S.qi+1)+" / 3";
+  $("progBar").style.width=(S.qi/3*100)+"%";
+  $("progScore").textContent="Score: "+S.score;
+  $("qTag").textContent=q.tag;$("qText").textContent=q.q;$("qSub").textContent="Choose one answer. Use the scoreboard to help you.";
+  $("fb").innerHTML="";$("btnNext").hidden=true;
+  $("btnNext").textContent=S.qi<2?"Next Challenge":"See My Results";
+  $("opts").innerHTML="";
+  q.opts.forEach(function(o,i){
+    var b=document.createElement("button");b.type="button";b.className="opt";b.dataset.i=i;
+    b.innerHTML="<b>"+L[i]+"</b><span></span>";b.lastChild.textContent=o.t;
+    b.onclick=function(){pick(i)};$("opts").appendChild(b);
+  });
+}
+function pick(i){
+  if(S.locked||S.ans[S.qi]!==null)return;          /* one answer per question */
+  S.locked=true;var q=QS[S.qi],ok=i===q.a;S.ans[S.qi]=L[i];if(ok)S.score++;
+  var bs=$("opts").children;
+  for(var k=0;k<bs.length;k++){bs[k].disabled=true;
+    if(k===q.a)bs[k].classList.add("right");else if(k===i)bs[k].classList.add("wrong");else bs[k].classList.add("dim")}
+  $("progScore").textContent="Score: "+S.score;
+  $("fb").innerHTML=ok
+    ?"<div class=\"fb ok\"><strong>✓ Correct!</strong>"+q.why+"</div>"
+    :"<div class=\"fb no\"><strong>Not quite. The answer is "+L[q.a]+".</strong>"+(q.opts[i].w?q.opts[i].w+" ":"")+q.why+"</div>";
+  $("progBar").style.width=((S.qi+1)/3*100)+"%";
+  $("btnNext").hidden=false;$("btnNext").focus();
+}
+$("btnNext").onclick=function(){if(S.ans[S.qi]===null)return;if(S.qi<2){S.qi++;renderQ()}else results()};
+document.addEventListener("keydown",function(e){
+  if(!$("s-q").classList.contains("active")||e.target.tagName==="INPUT")return;
+  var k=e.key.toUpperCase(),i=L.indexOf(k);if(k.length===1&&i>-1&&!S.locked)pick(i);
+});
+
+/* ---------- results ---------- */
+function results(){
+  var sc=S.score,m={3:["Threat neutralised!","Perfect score! You are a true Avengers champion!"],
+    2:["Great work, recruit!","Two out of three. Look at the one you missed and you will be unstoppable."],
+    1:["Good effort, hero!","You got one right. Study the scoreboard and the rules, then try again."],
+    0:["Keep training, hero!","Every Avenger starts at training. Read the explanations and try again. You can do it!"]}[sc];
+  $("resTitle").textContent=m[0];$("resMsg").textContent=m[1];
+  $("resScore").innerHTML=sc+"<small> / 3</small>";
+  $("resReview").innerHTML=QS.map(function(q,i){var ok=S.ans[i]===L[q.a];
+    return "<div class=\"rv "+(ok?"ok":"no")+"\"><i>"+(ok?"✓":"✗")+"</i><span>Challenge "+(i+1)+": you chose "+S.ans[i]+(ok?"":" (correct: "+L[q.a]+")")+"</span></div>"}).join("");
+  var b=$("btnSubmit");b.disabled=false;b.textContent="Submit Results";
+  $("status").innerHTML="";show("s-result");
+  if(sc===3)confetti();
+}
+function confetti(){var c=["#e62429","#f5b82e","#f4f7fb"];for(var i=0;i<60;i++){var d=document.createElement("i");d.className="cf";
+  d.style.left=Math.random()*100+"vw";d.style.background=c[i%3];d.style.animationDelay=Math.random()*.7+"s";document.body.appendChild(d);
+  (function(x){setTimeout(function(){x.remove()},3600)})(d)}}
+
+/* ---------- submission to Google Sheets ---------- */
+function configured(){return /^https:\/\/script\.google\.com\/macros\/s\/[^\/]+\/exec$/.test(SCRIPT_URL)}
+function status(kind,title,text,extra){
+  $("status").innerHTML="<div class=\"status "+kind+"\"><strong>"+title+"</strong>"+text+(extra?"<small>"+extra+"</small>":"")+"</div>";
+}
+function copyText(){
+  return "Avengers Final Mission | "+S.pupil+" | Q1 "+S.ans[0]+" | Q2 "+S.ans[1]+" | Q3 "+S.ans[2]+" | Score "+S.score+"/3 | ID "+S.sid;
+}
+function submit(){
+  if(S.sent||S.sending)return;                        /* no duplicate submissions */
+  if(!configured()){
+    status("warn","Not connected yet","Your score is "+S.score+" / 3, but nothing has been sent. The teacher still needs to connect this page to Google Sheets.",
+      "Please show this screen to your teacher.");
+    return;
+  }
+  S.sending=true;var b=$("btnSubmit");b.disabled=true;b.textContent="Sending…";
+  status("warn","Sending…","Please wait. Do not close this page.");
+  var payload=JSON.stringify({pupilId:S.pupil,q1:S.ans[0],q2:S.ans[1],q3:S.ans[2],score:S.score,submissionId:S.sid});
+  var sid=S.sid;
+  fetch(SCRIPT_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:payload,redirect:"follow"})
+  .then(function(r){return r.json()})
+  .then(function(j){
+    if(sid!==S.sid)return;
+    S.sending=false;
+    if(j&&j.ok){S.sent=true;b.textContent="Submitted ✓";
+      status("ok","Results saved","Your answers were received by Google Sheets. Well done, "+S.pupil+"!","Reference: "+S.sid.slice(-8).toUpperCase())}
+    else{b.disabled=false;b.textContent="Submit Results";
+      status("bad","Not saved",(j&&j.error?j.error:"The server did not accept the results.")+" Please try again or tell your teacher.")}
+  })
+  .catch(function(){
+    /* The browser blocked reading the reply (common with Apps Script from another website).
+       Send once more in "no-cors" mode. The server ignores repeats of the same ID, so this is safe. */
+    return fetch(SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:payload})
+    .then(function(){
+      if(sid!==S.sid)return;
+      S.sending=false;S.sent=true;b.textContent="Sent";
+      status("warn","Sent, but not confirmed","Your results were sent, but this browser cannot confirm that they were saved. Please tell your teacher.",
+        "Reference: "+S.sid.slice(-8).toUpperCase()+" · Copy for your teacher: "+copyText())
+    })
+    .catch(function(){
+      if(sid!==S.sid)return;
+      S.sending=false;b.disabled=false;b.textContent="Submit Results";
+      status("bad","Could not send","Check the internet connection and press Submit Results again.","Backup to give your teacher: "+copyText())
+    });
+  });
+}
+$("btnSubmit").onclick=submit;
+$("btnRetry").onclick=startAttempt;
+$("btnHome").onclick=function(){S.sid="";$("status").innerHTML="";show("s-start");$("pupilId").focus()};
+})();
+</script>
+</body>
+</html>
